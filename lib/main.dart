@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
 import 'package:parse_server_sdk_flutter/parse_server_sdk.dart';
 import 'package:xlo/screens/base/base_screen.dart';
+import 'package:xlo/stores/page_store.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initializeParse();
+  setupLocators();
   runApp(MyApp());
 }
 
@@ -15,6 +18,10 @@ Future<void> initializeParse() async {
 
   await Parse().initialize(keyApplicationId, keyParseServerUrl,
       clientKey: keyClientKey, autoSendSessionId: true, debug: true);
+}
+
+void setupLocators(){
+  GetIt.I.registerSingleton(PageStore());
 }
 
 class MyApp extends StatelessWidget {
