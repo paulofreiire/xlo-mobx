@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class PageTile extends StatelessWidget {
-  PageTile({required this.label, required this.iconData, required this.onTap, required this.highlighted});
+  PageTile({this.label, this.iconData, this.onTap, this.highlighted});
 
   final String label;
   final IconData iconData;
