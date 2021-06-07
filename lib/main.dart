@@ -20,7 +20,7 @@ Future<void> initializeParse() async {
       clientKey: keyClientKey, autoSendSessionId: true, debug: true);
 }
 
-void setupLocators(){
+void setupLocators() {
   GetIt.I.registerSingleton(PageStore());
 }
 
@@ -30,9 +30,17 @@ class MyApp extends StatelessWidget {
     // TODO: implement build
     return MaterialApp(
       title: 'XLO',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity
+        primaryColor: Colors.purple,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+        scaffoldBackgroundColor: Colors.purple,
+        appBarTheme: AppBarTheme(
+          elevation: 0
+        ),
+        textSelectionTheme: TextSelectionThemeData(
+          cursorColor: Colors.orange
+        )
       ),
       home: BaseScreen(),
     );
