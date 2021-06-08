@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:xlo/screens/signup/signup_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   @override
